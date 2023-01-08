@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+    apacheserv:
+        image: php:7.4-apache
+        container_name: apachecont
+        ports:
+            - '8000:80'
+        volumes:
+            - ./docker/www:/var/www/html
+        command:
+            - bash -c "apt-get update && apt-get install git -y && git clone https://github.com/ByJosefh11/examenPHP.git /var/www/html"
+
+
+

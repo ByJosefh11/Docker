@@ -1,0 +1,3 @@
+FROM php:7.4-apache
+
+RUN apt-get update && apt-get install git -y && git clone https://github.com/ByJosefh11/examenPHP.git /var/www/html
