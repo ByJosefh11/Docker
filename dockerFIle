@@ -3,4 +3,6 @@ FROM php:8-apache
 RUN \
 apt-get update && \
 apt-get install git -y && \ 
-git clone https://github.com/ByJosefh11/examenPHP.git /var/www/html
+cd C:\xampp\htdocs\Docker\docker\www\
+git clone https://github.com/ByJosefh11/examenPHP.git
+ 
