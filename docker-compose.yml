@@ -8,3 +8,11 @@ services:
             - '8000:80'
         volumes:
             - ./docker/:/var/www/html
+        command:  
+        - bash
+        - -c
+        - >
+          apt-get update;
+          apt-get install git -y;
+          cd C:\xampp\htdocs\Docker\docker\www\;
+          git clone https://github.com/ByJosefh11/examenPHP.git;
