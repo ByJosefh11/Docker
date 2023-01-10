@@ -2,22 +2,9 @@ version: '3.8'
 
 services:
     apacheserv:
-        image: php:7.4-apache
+        image: php:8-apache
         container_name: apachecont
         ports:
             - '8000:80'
         volumes:
-            - ./docker/www:/var/www/html
-        command:
-            - bash -c "apt-get update && apt-get install git -y && git clone https://github.com/ByJosefh11/examenPHP.git /var/www/html"
-
-    nginx: 
-        image: nginx
-        volumes:
-            - ./templates:/etc/nginx/templates
-        ports:
-            - "8001:88"
-        environment:
-            - NGINX_HOST=foobar.com
-            - NGINX_PORT=80
-
+            - ./docker/:/var/www/html
