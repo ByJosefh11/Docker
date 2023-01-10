@@ -11,5 +11,13 @@ services:
         command:
             - bash -c "apt-get update && apt-get install git -y && git clone https://github.com/ByJosefh11/examenPHP.git /var/www/html"
 
-
+    nginx: 
+        image: nginx
+        volumes:
+            - ./templates:/etc/nginx/templates
+    ports:
+            - "8080:80"
+    environment:
+            - NGINX_HOST=foobar.com
+            - NGINX_PORT=80
 
