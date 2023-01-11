@@ -1,22 +1,7 @@
 version: '3.8'
 
 services:
-    apache:
-        image: php:8-apache
-        container_name: apachecont
+    www:
+        build: .
         ports:
-            - '8000:80'
-        volumes:
-            - ./docker/:/var/www/html
-        command:  
-        - bash
-        - -c
-        - >
-          apt-get update;
-          apt-get install git -y;
-          cd C:\xampp\htdocs\Docker\docker\www\;
-          git clone https://github.com/ByJosefh11/examenPHP.git;
-
-        environment:
-        - APACHE_HTTP_PORT_NUMBER=8000
-        - TRUSTED_HOST=localhost
+            -80:80
