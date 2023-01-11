@@ -1,8 +1,6 @@
-FROM php:8-apache
+FROM php:8.0-apache
 
-RUN \
-apt update && \
-apt-get install git -y && \ 
-cd C:\xampp\htdocs\Docker\docker\www\
-git clone https://github.com/ByJosefh11/examenPHP.git
+RUN apt update && apt-get install git -y 
+WORKDIR C:\xampp\htdocs\Docker\docker\www
+RUN git clone https://github.com/ByJosefh11/examenPHP.git
  

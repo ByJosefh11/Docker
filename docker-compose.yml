@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-    apacheserv:
+    apache:
         image: php:8-apache
         container_name: apachecont
         ports:
@@ -19,3 +19,4 @@ services:
 
         environment:
         - APACHE_HTTP_PORT_NUMBER=8000
+        - TRUSTED_HOST=localhost
